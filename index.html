@@ -40,8 +40,8 @@
         <ul id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a><div class="popup" id="team-button" onclick="togglePopup(this.id)">Our Team
-              <span class="popuptext">Section coming soon</span></div></a></li>
+          <!-- <li><a><div class="popup" id="team-button" onclick="togglePopup(this.id)">Our Team
+              <span class="popuptext">Section coming soon</span></div></a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -125,7 +125,8 @@
         var addressOfUser = document.getElementById("email");
         var subjectSent = document.getElementById("subject");
         var messageSent = document.getElementById("message");
-        var url = 'https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzFdrQG6gIzCdRvwyAljscJpKKt653WZR-CwZCsGvHuKwaN2wCo/exec';
+        // https://cors-anywhere.herokuapp.com/
+        var url = 'https://script.google.com/macros/s/AKfycbzFdrQG6gIzCdRvwyAljscJpKKt653WZR-CwZCsGvHuKwaN2wCo/exec';
         var sendEmailButton = document.getElementById("sendEmailButton");
         var printText = document.getElementById("sentMessageText");
         
@@ -140,31 +141,36 @@
     
           printText.insertAdjacentHTML('beforeend', "Message was sent");
     
+          // nameOfUser.value
+          // addressOfUser.value
+          // subjectSent.value
+          // messageSent.value
+
           var json = {
-            sender_name: nameOfUser.value,
-	          sender_address: addressOfUser.value,
-	          subject: subjectSent.value,
-            message: messageSent.value
+            "sender_name" : "name",
+	          "sender_address" : "address",
+	          "subject" : "subject",
+            "message" : "message"
           }
 
           console.log("Creating Request and sending " + JSON.stringify(json));
 
-         var ourRequest = new XMLHttpRequest();
+          var ourRequest = new XMLHttpRequest();
           ourRequest.open('POST', url);
           ourRequest.setRequestHeader('X-PINGOTHER', 'pingpong');
           ourRequest.setRequestHeader('Content-Type', 'application/xml');
-         ourRequest.onload = function() {
-           if (ourRequest.status >= 200 && ourRequest.status < 400) {
-               console.log("Connected to the Server.");
-             // var ourData = JSON.parse(ourRequest.responseText);
-             // renderHTML(ourData);
-           } else {
-             console.log("We connected to the server, but it returned an error.");
-           }
-         };
-        ourRequest.onerror = function() {
-          console.log("Connection error");
-        };
+        //   ourRequest.onload = function() {
+        //     if(ourRequest.status >= 200 && ourRequest.status < 400) {
+        //        console.log("Connected to the Server.");
+        //      // var ourData = JSON.parse(ourRequest.responseText);
+        //      // renderHTML(ourData);
+        //    } else {
+        //      console.log("We connected to the server, but it returned an error.");
+        //    }
+        //  };
+        // ourRequest.onerror = function() {
+        //   console.log("Connection error");
+        // };
         ourRequest.setRequestHeader('Content-Type', 'application/json');
         console.log("Sending");
         ourRequest.send(JSON.stringify(json));
@@ -226,6 +232,7 @@
     </script>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="sendMail.js"></script>
 
 <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup -->
 
