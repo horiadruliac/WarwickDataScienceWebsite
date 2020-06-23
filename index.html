@@ -1,3 +1,4 @@
+<!-- Revert to this if things go wrong -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -6,10 +7,7 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
     <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
@@ -19,8 +17,6 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script src="https://kit.fontawesome.com/b0e45b6dae.js"></script>
     <script data-ad-client="pub-4718922828481704" async src="https://pagead2.googlesyndication
@@ -40,9 +36,10 @@
         <ul id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <!-- <li><a><div class="popup" id="team-button" onclick="togglePopup(this.id)">Our Team
-              <span class="popuptext">Section coming soon</span></div></a></li> -->
-          <li><a href="#contact">Contact</a></li>
+          <li><a><div class="popup" id="team-button" onclick="togglePopup(this.id)">Our Team
+              <span class="popuptext">Section coming soon</span></div></a></li>
+          <li><a><div class="popup" id="contact-button" onclick="togglePopup(this.id)">Contact
+              <span class="popuptext">Section coming soon</span></div></a></li>
         </ul>
       </nav>
     </header>
@@ -53,13 +50,21 @@
     <!-- TODO We will need to replace all div's so we can make it SEO compatible -->
     <span class="w3-jumbo">Warwick Data Science</span><br>
     <!-- TODO we will need this sub menu changed to our motto - soon -->
-    <span class="w3-xlarge"> Learn more about Data Science at Warwick </span>
+    <span class="w3-xlarge"> Development is the key to success. Learn more about Data Science at Warwick!</span>
     <!-- <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p> -->
   </div>
+  <!-- <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div> -->
 </div>
 
 <!-- About Us Section -->
-<div class="w3-container w3-light-grey" style="padding:100px 16px" id="about">
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3 class="aboutTextHeader">About Us</h3>
@@ -75,106 +80,6 @@
   </div>
 </div>
 
-<!-- Div Class for the Contact Form made with Materialise-->
-<div class="w3-container w3-light-grey" style="padding:1px 16px" id="contact">
-  <!-- Styling and Structure for heading-->
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3 class="contactTextHeader"> Contact Us</h3>
-    </div>
-  </div>
-  <!-- Contact form made with Materialize-->
-  <div class="row" style="padding: 0px 150px">
-    <form name="contact" class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="full_name" type="text" class="validate" required>
-          <label for="full_name">Full Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="email" type="text" class="validate" required>
-          <label for="email">E-mail Address</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="subject" type="text" class="validate">
-          <label for="subject">Subject (Optional) </label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-            <textarea id="message" class="materialize-textarea" required></textarea>
-            <label for="message">Message</label>
-        </div>
-      </div>
-      <button class="btn waves-effect waves-light" id="sendEmailButton" type="submit" name="action" style="background: var(--wds)">Submit
-        <i class="material-icons right">send</i>
-      </button>
-      <div id="sentMessageText"></div>
-      <script>
-        var nameOfUser = document.getElementById("full_name");
-        var addressOfUser = document.getElementById("email");
-        var subjectSent = document.getElementById("subject");
-        var messageSent = document.getElementById("message");
-        var url = 'https://script.google.com/macros/s/AKfycbzFdrQG6gIzCdRvwyAljscJpKKt653WZR-CwZCsGvHuKwaN2wCo/exec';
-        var sendEmailButton = document.getElementById("sendEmailButton");
-        var printText = document.getElementById("sentMessageText");
-        
-        sendEmailButton.addEventListener("click", function() {
-          
-          event.preventDefault();
-
-           // Return false if the form is not valid, otherwise the HTTP request is made
-           if (validateForm() == false) {
-            return false;
-          }
-    
-          printText.insertAdjacentHTML('beforeend', "Message was sent");
-
-          var json = {
-            "sender_name" : nameOfUser.value,
-	          "sender_address" : addressOfUser.value,
-	          "subject" : subjectSent.value,
-            "message" : messageSent.value
-          }
-
-          console.log("Creating Request and sending " + JSON.stringify(json));
-
-          var ourRequest = new XMLHttpRequest();
-          ourRequest.open('POST', url);
-          ourRequest.setRequestHeader('X-PINGOTHER', 'pingpong');
-          ourRequest.setRequestHeader('Content-Type', 'application/xml');
-        ourRequest.setRequestHeader('Content-Type', 'application/json');
-        console.log("Sending");
-        ourRequest.send(JSON.stringify(json));
-      });
-      /*
-        Checks email address string against regular expression and returns a bool.
-        Source: https://stackoverflow.com/a/46181
-      */
-        function validateEmail(email) {
-          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(String(email).toLowerCase());
-        }
-
-        // Check if the attributes are empty or not
-        function validateForm() {
-          var name = document.forms["contact"]["full_name"].value;
-          var email = document.forms["contact"]["email"].value;
-          var message = document.forms["contact"]["message"].value;
-
-          if (name == "" || email == "" || message == "") {
-            alert("Details are missing in the contact form.");
-            return false;
-          }
-          return true;
-        }
-      </script>
-    </form>
-  </div>
-  <br>
-</div>
 
 <div class="" style="background: white">
   <div class="tableL">
@@ -182,6 +87,7 @@
       <li class="footerLI"><a class="footerAT" href="https://www.facebook.com/warwickdatascience"><i class="fab fa-facebook-square"></i></a></li>
       <li class="footerLI"><a class="footerAT" href="https://www.linkedin.com/company/warwick-data-science-society/"><i class="fab fa-linkedin"></i></a></li>
       <li class="footerLI"><a class="footerAT" href="https://www.instagram.com/warwick_data_science/"><i class="fab fa-instagram"></i></a></li>
+      <!-- <li class="footerLI"><a class="footerAT" href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>  -->
       <li class="footerLI"><a class="footerAT" href="mailto:warwickdatascience@gmail.com">Mail</a></li>
     </ul>
   </div>
@@ -203,9 +109,7 @@
         }
       }
     </script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="sendMail.js"></script>
 
+<!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup -->
 
 </body></html>
