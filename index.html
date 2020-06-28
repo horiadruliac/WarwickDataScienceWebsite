@@ -101,29 +101,34 @@ TODO:
       </div>
       <!-- Contact form made with Materialize-->
       <div class="row" style="padding: 0px 150px">
-        <form name="contact" class="gform col s12" method="POST" data-email=>
+        <form name="contact" class="gform col s12" id="contactForm" method="POST" data-email=>
           <div class="row">
             <div class="input-field col s6">
-              <input id="full_name" type="text" class="validate" required>
+              <input id="full_name" type="text" class="validate" data-length="60" required="" aria-required="true">
               <label for="full_name">Full Name</label>
+              <span class="helper-text" id="nameError" data-error=""></span>
             </div>
             <div class="input-field col s6">
-              <input id="email" type="text" class="validate" required>
+              <input id="email" type="text" class="validate" required="" data-length="80" aria-required="true">
               <label for="email">E-mail Address</label>
+              <span class="helper-text" id="emailError" data-error=""></span>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="subject" type="text" class="validate">
+              <input id="subject" type="text" class="validate" data-length="80">
               <label for="subject">Subject</label>
+              <span class="helper-text" id="subjectError" data-error=""></span>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-                <textarea id="message" class="materialize-textarea" required></textarea>
+                <textarea id="message" class="materialize-textarea" required="" aria-required="true" data-length="500"></textarea>
                 <label for="message">Message</label>
+                <span class="helper-text" id="messageError" data-error=""></span>
             </div>
           </div>
+          <div id="successMessage"></div><br>
           <button class="btn waves-effect waves-light" id="sendEmailButton" type="submit" name="action" style="background: var(--wds)">Submit
             <i class="material-icons right">send</i>
           </button>
@@ -149,6 +154,12 @@ TODO:
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
     <script type="text/javascript" src="js/materialize/materialize.min.js"></script>
+    <script>
+      // Character counter initialisation for form
+      $(document).ready(function() {
+        $('input#full_name, input#email, input#subject, textarea#message').characterCounter();
+      });
+    </script>
 
   </body>
 
