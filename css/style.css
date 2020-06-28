@@ -78,7 +78,7 @@ body ul li {
   list-style-type: none;
 }
 
- .nav {
+.nav {
   background-color: white;
   width: 100%;
   position: fixed;
@@ -88,13 +88,11 @@ body ul li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
- .nav ul#menu {
+ul#menu {
   display: none;
 }
-
- .nav ul#menu li a {
+ul#menu li a {
   width: 100%;
-  height: 0%;
   display: block;
   text-decoration: none;
   text-transform: uppercase;
@@ -104,16 +102,17 @@ body ul li {
   transition: background 0.2s;
   text-decoration: none;
 }
-.nav ul#menu a:hover {
+ul#menu a:hover {
   color: var(--wds);
 }
 
-.nav ul.hamburger li {
+ul.hamburger li {
   height: 5px;
   background: var(--wds);
   content: "";
-  position: fixed;
+  position: relative;
   transition: 0.25s ease-in-out;
+  float: none;
 }
 
 /*.hidden {
@@ -133,19 +132,19 @@ ul.hamburger {
   display: block;
 }
 ul.hamburger li:nth-child(1) {
-  top: 0;
+  top: 5px;
 }
 ul.hamburger li:nth-child(2) {
-  top: 5px;
+  top: 10px;
 }
 /*ul.hamburger li:nth-child(3) {
   top: 10px;
 }*/
 
-.nav .hamburger-container {
+.hamburger-container {
   width: 38px;
   margin: 1.2em 1.6em;
-  height: 17px;
+  height: 30px;
   cursor: pointer;
   float: right;
 }
@@ -208,22 +207,8 @@ ul.hamburger li:nth-child(2) {
   color: var(--wds);
 }
 
-.contact-form {
-  padding: 80px;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  clear: both;
-}
-
-.contactHeader {
-  position: relative;
-  color: black;
-  font-size: 60px;
-}
-
 #footer{
-  height: 40px;
+  height: 50px;
   background: white;
 }
 /* #content{
@@ -247,12 +232,9 @@ ul.hamburger li:nth-child(2) {
   }
 }
 
-
-@media screen and (min-width: 800px){
-  .bgImage{
-    height: 1000px;
-
-  }
+.contactTextHeader{
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 @media screen and (min-width: 800px) {
@@ -298,78 +280,24 @@ ul.hamburger li:nth-child(2) {
     position: absolute;
   }
 
-  .nav ul#menu {
+  ul#menu {
     display: inline;
     float: right;
   }
-  .nav ul#menu li {
+  ul#menu li {
     display: inline-block;
     margin-right: -5px;
     height: 52px;
   }
+
+  .bgImage{
+    height: 1000px;
+
+  }
 }
 
-/* For the comming soon popup - will be deleted after full implementation */
-
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* The actual popup */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: -325%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: -17%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-  transform: rotate(180deg);
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 0.3s;
-  animation: fadeIn 0.3s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
-
-  /*
-  nav {
+  /*  teeessstt */
+  /* nav {
     float: right;
   }
   nav ul {
@@ -396,4 +324,4 @@ ul.hamburger li:nth-child(2) {
   nav a:hover {
     color: #564782;
     transition: all ease-in-out 160ms;
-  }*/
+  } */
