@@ -112,6 +112,7 @@ ul.hamburger li {
   content: "";
   position: relative;
   transition: 0.25s ease-in-out;
+  float: none;
 }
 
 /*.hidden {
