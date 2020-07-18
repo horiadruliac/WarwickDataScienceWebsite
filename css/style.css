@@ -245,7 +245,7 @@ ul.hamburger li:nth-child(2) {
     display:block;
     margin-left: 10px;
     float: left;
-    width: 35px;
+    height: 100%;
     padding: 7px 0;
   }
   .title{
