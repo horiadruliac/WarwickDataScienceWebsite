@@ -29,4 +29,6 @@ $(document).ready(function() {
       middleBar.addClass("rot-45deg");
     }
   });
+
+
 });
