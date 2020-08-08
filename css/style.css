@@ -231,10 +231,10 @@ ul.hamburger li:nth-child(2) {
   }
 }
 
-.contactTextHeader{
+/* .contactTextHeader{
   padding-right: 150px;
   padding-left: 150px;
-}
+} */
 
 @media screen and (min-width: 800px) {
   .hamburger-container {
