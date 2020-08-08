@@ -29,35 +29,4 @@ $(document).ready(function() {
       middleBar.addClass("rot-45deg");
     }
   });
-
-  $('.slick-active').addClass('border-right').removeClass('border-right--no');
-
-  $('.slick-center').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '60px',
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '60px',
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
 });
