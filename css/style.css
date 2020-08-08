@@ -68,6 +68,10 @@ body {
   background: white;
 }
 
+.w3-jumbo {
+  font-weight: bold;
+}
+
 * {
 
   margin: 0;
@@ -76,6 +80,15 @@ body {
 
 body ul li {
   list-style-type: none;
+}
+
+h3 {
+  font-weight: bold !important;
+}
+
+nav {
+  position: fixed;
+  z-index: 10;
 }
 
 .nav {
@@ -156,7 +169,7 @@ ul.hamburger li:nth-child(2) {
 /* Background Image */
 
 .bgImage{
-  background-image: url("https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background: url(/img/cover-image.jpg);
   background-size:cover;
   opacity: 0.9;
   height: 600px;
