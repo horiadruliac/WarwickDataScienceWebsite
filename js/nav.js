@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $(".sidenav").sidenav();
+  
   //toggle menu
   $(".hamburger-container").click(function() {
     $("#menu").slideToggle();

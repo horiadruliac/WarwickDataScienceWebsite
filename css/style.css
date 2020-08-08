@@ -69,7 +69,7 @@ body {
 }
 
 * {
-  box-sizing: border-box;
+
   margin: 0;
   padding: 0;
 }
@@ -230,11 +230,16 @@ ul.hamburger li:nth-child(2) {
   padding-left: 150px;
   }
 }
-
-.contactTextHeader{
+.slick-list {
+  outline: none !important;
+}
+.linkedin-blue {
+  color:#0072b1;
+}
+/* .contactTextHeader{
   padding-right: 150px;
   padding-left: 150px;
-}
+} */
 
 @media screen and (min-width: 800px) {
   .hamburger-container {
