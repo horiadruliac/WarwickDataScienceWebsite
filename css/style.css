@@ -230,7 +230,12 @@ ul.hamburger li:nth-child(2) {
   padding-left: 150px;
   }
 }
-
+.slick-list {
+  outline: none !important;
+}
+.linkedin-blue {
+  color:#0072b1;
+}
 /* .contactTextHeader{
   padding-right: 150px;
   padding-left: 150px;
