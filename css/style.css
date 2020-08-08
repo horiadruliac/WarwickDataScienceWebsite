@@ -313,3 +313,10 @@ ul.hamburger li:nth-child(2) {
   }
 }
 
+#logo {
+  height: 100%;
+}
+
+.card-wdss {
+  min-height: 26vh;
+}

@@ -29,4 +29,18 @@ $(document).ready(function() {
       middleBar.addClass("rot-45deg");
     }
   });
+
+  function checkForChanges()
+  {
+      if ($('#desktop-nav').hasClass('hide-on-med-and-down')) {
+        $('#mobile-logo').css('hidden','show');
+      }
+      else {
+          setTimeout(checkForChanges, 500);
+      }
+  }
+  $(checkForChanges);
+
+  var show = $('#desktop-nav').hasClass('hide-on-med-and-down');
+  $('#mobile-logo').toggle(show);
 });
